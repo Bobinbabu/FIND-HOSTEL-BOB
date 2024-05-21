@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html" style="scroll-behavior:smooth ;">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Hostel For Youth</title>
+    <link rel="icon" type="images/x-icon" href="{% static 'FH.png' %}"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+  }
+
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+
+a:hover{
+text-decoration:none;
+}
+
+        .centered {
+          position: absolute;
+          top: 45%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .centered1 {
+          position: absolute;
+          top: 60%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .centered2 {
+          position: absolute;
+          top: 65%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        /* .centered3 {
+          position: absolute;
+          top: 65%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        } */
+
+</style>
+
+<body class="w3-light-grey" style="margin: 0rem;">
+
+<header class="bg-light" style="position: fixed;z-index:1;width: 100%;">
+    <div class="row">
+        <div class="col-md-6 col-9 my-auto pl-5 mr-auto">
+            <a href="#home" class="nav-link w3-button"><h3><i class="w3-margin-right"><img src="{% static 'FH.png' %}" width="30" height="30"></i>FIND HOSTEL</h3></a>
+        </div>
+        <div class="col-md-6 col-3 my-auto">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link w3-button w3-mobile" href="#rooms">Rooms<span class="sr-only">(current)</span></a>
+                  </li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  <li class="nav-item active">
+                    <a class="nav-link w3-button w3-mobile" href="#about">About</a>
+                  </li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                  <li class="nav-item active">
+                    <a class="nav-link w3-button w3-mobile" href="#contact">Contact</a>
+                  </li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <div class="w3-dropdown-hover w3-right">
+                      <button class="w3-button">DashBoard &nbsp<i class="fa fa-caret-down"></i></button>
+                      {% for i in data %}
+                      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                        <a href="admin" class="w3-bar-item w3-button">{{i.username}}</a>
+                       <div class="dropdown-divider"></div>
+                       <a href="ulogout" class="w3-bar-item w3-button">Log Out</a>
+                      </div>
+                      {% endfor %}
+                    </div>
+                </ul>
+              </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section id="home">
+    <div class="row mr-0">
+        <div class="col-12 pr-0" >
+           <img src="{% static 'hostel6.jpg' %}" alt="" class="img-fluid" style="width:100% ; ">
+              <div class="centered">
+                <h1 class="text-white w3-animate-opacity" style="font-size:140px;">Find Hostel</h1>
+              </div>
+                  <div class="centered1">
+                     <p class="text-white" style="font-size:21px;">Sleek, intuitive, and powerful front - end framework for faster and</p>
+                  </div>
+                      <div class="centered2">
+                        <p class="text-white" style="font-size:21px;">easier Web development.</p>
+                      </div>
+                  <!-- <div class="centered3 text-center">
+                     <button type="button" class="btn btn-success btn-lg"><a style="text-decoration: none; color:white;" href="reg">Get Started</a></button>
+                  </div> -->
+              <div class="carousel-caption">
+                <h3>Ernakulam</h3>
+                <p>We had such a great time in ERA!</p>
+              </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="w3-container w3-margin-top" id="rooms">
+          <div class="w3-panel w3-blue w3-leftbar w3-padding-20">
+             <h6><i class="fa fa-bed w3-deep-orange w3-padding w3-margin-right"></i>Rooms</h6>
+          </div>
+              <div class="w3-row-padding w3-padding-16">
+                <div class="w3-third w3-margin-bottom">
+                  <img src="{% static 'hostel30.jpg' %}" alt="Norway" style="width:100%">
+                  <div class="w3-container w3-white">
+                    <h3>Single Room</h3>
+                    <h6 class="w3-opacity">From ₹6000</h6>
+                    <p>Single bed</p>
+                    <p>15m<sup>2</sup></p>
+                    <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>
+                    <button class="w3-button w3-block w3-green w3-margin-bottom">Choose Room</button>
+                  </div>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                  <img src="{% static 'hostel31.jpg' %}" alt="Norway" style="width:100%">
+                  <div class="w3-container w3-white">
+                    <h3>Double Room</h3>
+                    <h6 class="w3-opacity">From ₹5000</h6>
+                    <p>Queen-size bed</p>
+                    <p>25m<sup>2</sup></p>
+                    <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i></p>
+                    <button class="w3-button w3-block w3-green w3-margin-bottom">Choose Room</button>
+                  </div>
+                </div>
+                <div class="w3-third w3-margin-bottom">
+                  <img src="{% static 'hostel.jpg' %}" alt="Norway" style="width:100%">
+                  <div class="w3-container w3-white">
+                    <h3>Deluxe Room</h3>
+                    <h6 class="w3-opacity">From ₹4500</h6>
+                    <p>King-size bed</p>
+                    <p>40m<sup>2</sup></p>
+                    <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
+                    <button class="w3-button w3-block w3-green w3-margin-bottom">Choose Room</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+    </div>
+</section>
+      <div class="w3-panel w3-black w3-leftbar w3-padding-32">
+        <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> On demand, we can offer playstation, babycall, children care, dog equipment, etc.</h6>
+      </div>
+
+<section>
+    <div class="w3-row-padding" id="about">
+    <div class="w3-col l4 12">
+      <div class="w3-panel w3-blue w3-leftbar w3-padding-15">
+          <h6><i class="fa fa-address-card w3-deep-orange w3-padding w3-margin-right"></i>About</h6>
+      </div>
+      <h6>Our hotel is one of a kind. It is truely amazing. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</h6>
+      <p>We accept: <i class="fa fa-credit-card w3-large"></i> <i class="fa fa-cc-mastercard w3-large"></i> <i class="fa fa-cc-amex w3-large"></i> <i class="fa fa-cc-cc-visa w3-large"></i><i class="fa fa-cc-paypal w3-large"></i></p>
+    </div>
+    <div class="w3-col l8 12">
+      <!-- Image of location/map -->
+      <img src="{% static 'hostel23.jpg' %}" class="w3-image w3-greyscale" style="width:100%; transform:translate(-0%,2%)">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-large w3-center" style="margin:32px 0">
+    <div class="w3-third"><i class="fa fa-map-marker w3-text-red"></i> Ernakulam, KERALA</div>
+    <div class="w3-third"><i class="fa fa-phone w3-text-red"></i> Phone: +91 12345678910</div>
+    <div class="w3-third"><i class="fa fa-envelope w3-text-red"></i> Email: mail@mail.com</div>
+  </div>
+</section>
+
+  <div class="w3-panel w3-black w3-leftbar w3-padding-32">
+    <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> On demand, we can offer playstation, babycall, children care, dog equipment, etc.</h6>
+  </div>
+
+<div class="w3-container">
+      <div class="w3-panel w3-blue w3-leftbar w3-padding-20">
+          <h6><i class="fa fa-bed w3-deep-orange w3-padding w3-margin-right"></i>Our Hostels</h6>
+      </div>
+    <h6>You can find our hostels anywhere in the Ernakulam:</h6>
+  </div>
+
+  <div class="w3-row-padding w3-padding-16 w3-text-white w3-large">
+    <div class="w3-half w3-margin-bottom">
+      <div class="w3-display-container">
+        <img src="{% static 'hostel28.jpg' %}" alt="Cinque Terre" style="width:100%">
+        <span class="w3-display-bottomleft w3-padding w3-black">Kadavanthra</span>
+      </div>
+    </div>
+    <div class="w3-half">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="{% static 'hostel32.png' %}" alt="New York" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding w3-black">Kaloor</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="{% static 'hostel33.jpg' %}" alt="San Francisco" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding w3-black">Palarivattom</span>
+          </div>
+        </div>
+      </div>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="{% static 'hostel34.jpg' %}" alt="Pisa" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding w3-black">Edappally</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="{% static 'hostel35.jpg' %}" alt="Paris" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding w3-black">Kalamassery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-container w3-padding-32 w3-black w3-card w3-hover-opacity-off" style="margin:32px 0;">
+    <h2>Get the best offers first!</h2>
+    <p>Join our newsletter.</p>
+    <label>E-mail</label>
+    <input class="w3-input w3-border" type="text" placeholder="Your Email address">
+    <button type="button" class="w3-button w3-light-gray w3-margin-top w3-hover-red">Subscribe</button>
+  </div>
+
+
+  <div class="w3-container" id="contact">
+      <div class="w3-panel w3-blue w3-leftbar w3-padding-20">
+          <h6><i class="fa fa-vcard w3-deep-orange w3-padding w3-margin-right"></i>Contact</h6>
+      </div>
+    <p>If you have any questions, do not hesitate to ask them.</p>
+    <i class="fa fa-map-marker w3-text-red" style="width:30px"></i> Ernakulam, KERALA<br>
+    <i class="fa fa-phone w3-text-red" style="width:30px"></i> Phone: +91 12345678910<br>
+    <i class="fa fa-envelope w3-text-red" style="width:30px"> </i> Email: mail@mail.com<br>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p><button class="w3-button w3-green w3-padding-large" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+</div>
+
+<footer class="w3-padding-32 w3-black w3-center w3-margin-top">
+  <a href="#" class="w3-button w3-light-grey w3-hover-red"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <a href="https://www.facebook.com/" class="fa fa-facebook-official w3-hover-blue"></a>
+    <a href="https://www.instagram.com/" class="fa fa-instagram w3-hover-pink"></a>
+    <a href="https://www.whatsapp.com/" class="fa fa-whatsapp w3-hover-green"></a>
+    <a href="https://www.snapchat.com/" class="fa fa-snapchat w3-hover-yellow"></a>
+    <a href="https://in.pinterest.com/" class="fa fa-pinterest-p w3-hover-red"></a>
+    <a href="https://twitter.com/" class="fa fa-twitter w3-hover-blue"></a>
+    <a href="https://in.linkedin.com/" class="fa fa-linkedin w3-hover-blue"></a>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
